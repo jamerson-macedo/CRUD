@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.crudcomplete"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.crudcomplete"
@@ -36,6 +36,9 @@ android {
 }
 
 dependencies {
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     val nav_version = "2.7.2"
     // Kotlin
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
