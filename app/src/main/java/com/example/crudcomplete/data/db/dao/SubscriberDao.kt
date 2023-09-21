@@ -9,15 +9,20 @@ import androidx.room.Update
 import com.example.crudcomplete.data.db.entity.SubscriberEntity
 
 @Dao
-interface SubscriberDao{
+interface SubscriberDAO {
+
     @Insert
-    suspend fun insert(subscriberEntity: SubscriberEntity):Int
+    fun insert(subscriber: SubscriberEntity): Long
+
     @Update
-    suspend fun Update(subscriberEntity: SubscriberEntity)
-    @Query("DELETE FROM subscriber WHERE id=:id")
-    suspend fun delete(id: Int)
+    fun update(subscriber: SubscriberEntity)
+
+    @Query("DELETE FROM subscriber WHERE id = :id")
+     fun delete(id: Long)
+
     @Query("DELETE FROM subscriber")
-    suspend fun deleteall()
+   fun deleteAll()
+
     @Query("SELECT * FROM subscriber")
-    fun getall():LiveData<List<SubscriberEntity>>
+    fun getAll(): LiveData<List<SubscriberEntity>>
 }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CRUD COMPLETE</string>
+    <string name="subscriber_sucess">Successful insertion </string>
+    <string name="error">exist an error in insert</string>
 </resources>
