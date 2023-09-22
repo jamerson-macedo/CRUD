@@ -1,6 +1,7 @@
 package com.example.crudcomplete.ui.subscriber
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.crudcomplete.MainActivity
 import com.example.crudcomplete.R
 import com.example.crudcomplete.data.db.AppDataBase
@@ -26,6 +28,8 @@ class SubscriberFragment : Fragment() {
     private lateinit var input_name: EditText
     private lateinit var input_email: EditText
     private lateinit var button_subscriber: Button
+
+
 
 
     private val viewModel: SubscriberViewModel by viewModels {
@@ -59,8 +63,10 @@ class SubscriberFragment : Fragment() {
         input_email = view.findViewById(R.id.input_email)
         input_name = view.findViewById(R.id.input_name)
 
+
         observeEvents()
         setListeners()
+
 
     }
 
@@ -103,7 +109,9 @@ class SubscriberFragment : Fragment() {
 
             viewModel.addSubscriber(name, email)
         }
+
     }
+
 
 
 }

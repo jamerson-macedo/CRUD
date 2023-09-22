@@ -21,7 +21,7 @@ interface SubscriberDAO {
      fun delete(id: Long)
 
     @Query("DELETE FROM subscriber")
-   fun deleteAll()
+    fun deleteAll()
 
     @Query("SELECT * FROM subscriber")
     fun getAll(): LiveData<List<SubscriberEntity>>
